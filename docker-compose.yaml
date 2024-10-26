@@ -1,9 +1,11 @@
 services:
   backend:
+    container_name: llm-backend
     build:
       context: llmanipulate-backend
 
   frontend:
+    container_name: llm-frontend
     build:
       context: llmanipulate-frontend
 
