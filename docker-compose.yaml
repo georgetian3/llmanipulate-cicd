@@ -1,0 +1,10 @@
+services:
+  backend:
+    build: 
+
+  frontend:
+    build:
+
+  database:
+    
+  server:
