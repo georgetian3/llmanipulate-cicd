@@ -28,6 +28,7 @@ install_docker_compose() {
 }
 
 if docker_not_installed; then
+    echo "Docker compose not installed, installing..."
     install_docker_compose
 fi
 
