@@ -1,10 +1,29 @@
 services:
   backend:
-    build: 
+    build:
+      context: llmanipulate-backend
 
   frontend:
     build:
+      context: llmanipulate-frontend
 
-  database:
-    
+  database: # https://hub.docker.com/_/postgres
+    container_name: llm-db
+    image: postgres:alpine
+    restart: always
+    shm_size: 128mb
+
   server:
+    container_name: llm-server
+    image: caddy:alpine
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/caddy_data:/data
+      - ./caddy/caddy_config:/config
