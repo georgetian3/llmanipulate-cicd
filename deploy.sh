@@ -1,10 +1,10 @@
 #/bin/bash
 
 docker_not_installed() {
-    if command -v docker-compose >/dev/null 2>&1; then
-        return 0 # installed
+    if command -v docker compose >/dev/null 2>&1; then
+        return 1 # installed
     else
-        return 1 # not installed
+        return 0 # not installed
     fi
 }
 
