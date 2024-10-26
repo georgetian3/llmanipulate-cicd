@@ -1,8 +1,7 @@
-set -e
+#/bin/bash
 
 docker_not_installed() {
-    # Check for older version (`docker-compose`) or newer plugin-based (`docker compose`) version
-    if docker compose version >/dev/null 2>&1; then
+    if command -v docker-compose >/dev/null 2>&1; then
         return 0 # installed
     else
         return 1 # not installed
