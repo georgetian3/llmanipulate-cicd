@@ -1,13 +1,11 @@
-is_docker_installed() {
+docker_not_installed() {
   # Check for older version (`docker-compose`) or newer plugin-based (`docker compose`) version
   if docker compose version >/dev/null 2>&1; then
-    return 1 # installed
+    return 0 # installed
   else
-    return 0 # not installed
+    return 1 # not installed
   fi
 }
-
-echo is_docker_installed
 
 # install_docker_compose() {
 #     # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
@@ -27,8 +25,9 @@ echo is_docker_installed
 #     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 # }
 
-# if is_docker_installed  ; then
-#     install_docker_compose
-# fi
+if docker_not_installed; then
+    install_docker_compose
+fi
+
 
 # git 
