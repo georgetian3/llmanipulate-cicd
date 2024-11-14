@@ -3,6 +3,7 @@ services:
     container_name: llm-backend
     build:
       context: llmanipulate-backend
+    env_file: ".env"
 
   frontend:
     container_name: llm-frontend
