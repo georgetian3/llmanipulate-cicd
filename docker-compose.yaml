@@ -1,26 +1,27 @@
 services:
   backend:
-    container_name: llm-backend
+    container_name: llmanipulate-backend
     build:
       context: llmanipulate-backend
     env_file: backend.env
 
   frontend:
-    container_name: llm-frontend
+    container_name: llmanipulate-frontend
     build:
       context: llmanipulate-frontend
     env_file: frontend.env
 
   database: # https://hub.docker.com/_/postgres
-    container_name: llm-db
+    container_name: llmanipulate-db
     image: postgres:alpine
     restart: always
     shm_size: 128mb
     environment:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    env_file: backend.env
 
   server:
-    container_name: llm-server
+    container_name: llmanipulate-server
     image: caddy:alpine
     restart: unless-stopped
     cap_add:
