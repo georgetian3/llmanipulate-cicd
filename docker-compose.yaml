@@ -3,12 +3,13 @@ services:
     container_name: llm-backend
     build:
       context: llmanipulate-backend
-    env_file: ".env"
+    env_file: backend.env
 
   frontend:
     container_name: llm-frontend
     build:
       context: llmanipulate-frontend
+    env_file: frontend.env
 
   database: # https://hub.docker.com/_/postgres
     container_name: llm-db
