@@ -36,3 +36,4 @@ git submodule update --init --recursive
 git submodule update --recursive --remote
 
 sudo docker compose up --build -d
+sudo docker restart llmanipuate-server
