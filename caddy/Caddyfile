@@ -1,3 +1,3 @@
 coai-lab.org {
-    
+    reverse_proxy llmanipulate-frontend:3000
 }
