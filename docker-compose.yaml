@@ -9,16 +9,18 @@ services:
     container_name: llmanipulate-frontend
     build:
       context: llmanipulate-frontend
-    env_file: frontend.env
+    env_file:
+      - frontend.env
 
   database: # https://hub.docker.com/_/postgres
     container_name: llmanipulate-db
     image: postgres:alpine
     restart: always
     shm_size: 128mb
+    env_file:
+      - backend.env
     environment:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
-    env_file: backend.env
 
   server:
     container_name: llmanipulate-server
