@@ -1,12 +1,14 @@
 services:
   backend:
     container_name: llmanipulate-backend
+    restart: unless-stopped
     build:
       context: llmanipulate-backend
     env_file: backend.env
 
   frontend:
     container_name: llmanipulate-frontend
+    restart: unless-stopped
     build:
       context: llmanipulate-frontend
     env_file: frontend.env
