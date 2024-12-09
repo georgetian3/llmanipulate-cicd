@@ -4,4 +4,9 @@ coai-lab.org {
 
 api.coai-lab.org  {
     reverse_proxy llmanipulate-backend:8000
+    @websockets {
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    reverse_proxy @websockets llmanipulate-backend:8000
 }
