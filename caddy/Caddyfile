@@ -1,5 +1,5 @@
 coai-lab.org {
-    root * /var/www/html
+    root * /srv
     rewrite /guidelines /guidelines.pdf
     file_server
     @notStatic {

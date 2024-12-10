@@ -34,4 +34,4 @@ services:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/caddy_data:/data
       - ./caddy/caddy_config:/config
-      - ./guidelines.pdf:/var/www/guidelines.pdf
+      - ./guidelines.pdf:/srv/guidelines.pdf
