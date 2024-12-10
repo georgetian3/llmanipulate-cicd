@@ -11,7 +11,6 @@ services:
     restart: unless-stopped
     build:
       context: llmanipulate-frontend
-    env_file: frontend.env
 
   database: # https://hub.docker.com/_/postgres
     container_name: llmanipulate-db
