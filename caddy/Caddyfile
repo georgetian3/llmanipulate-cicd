@@ -1,5 +1,11 @@
 coai-lab.org {
-    reverse_proxy llmanipulate-frontend:3000
+    root * /var/www/html
+    rewrite /guidelines /guidelines.pdf
+    file_server
+    @notStatic {
+        not file {path}
+    }
+    reverse_proxy @notStatic llmanipulate-frontend:3000
 }
 
 api.coai-lab.org  {
