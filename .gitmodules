@@ -1,6 +1,29 @@
-[submodule "llmanipulate-frontend"]
-	path = llmanipulate-frontend
+[submodule "llmanipulate-frontend-prod"]
+	path = llmanipulate-frontend-prod
 	url = https://github.com/georgetian3/llmanipulate-frontend.git
-[submodule "llmanipulate-backend"]
-	path = llmanipulate-backend
+	branch = main
+
+[submodule "llmanipulate-backend-prod"]
+	path = llmanipulate-backend-prod
 	url = https://github.com/georgetian3/llmanipulate-backend.git
+	branch = main
+
+[submodule "llmanipulate-frontend-dev"]
+	path = llmanipulate-frontend-dev
+	url = https://github.com/georgetian3/llmanipulate-frontend.git
+	branch = dev
+
+[submodule "llmanipulate-backend-dev"]
+	path = llmanipulate-backend-dev
+	url = https://github.com/georgetian3/llmanipulate-backend.git
+	branch = dev
+
+[submodule "llmanipulate-frontend-sandpit"]
+	path = llmanipulate-frontend-sandpit
+	url = https://github.com/georgetian3/llmanipulate-frontend.git
+	branch = sandpit
+
+[submodule "llmanipulate-backend-sandpit"]
+	path = llmanipulate-backend-sandpit
+	url = https://github.com/georgetian3/llmanipulate-backend.git
+	branch = sandpit
