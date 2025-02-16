@@ -1,6 +1,0 @@
-[submodule "llmanipulate-frontend"]
-	path = llmanipulate-frontend
-	url = https://github.com/georgetian3/llmanipulate-frontend.git
-[submodule "llmanipulate-backend"]
-	path = llmanipulate-backend
-	url = https://github.com/georgetian3/llmanipulate-backend.git
