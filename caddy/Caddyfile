@@ -5,29 +5,29 @@ coai-lab.org {
     @notStatic {
         not file {path}
     }
-    reverse_proxy @notStatic llmanipulate-frontend-prod:3000
+    reverse_proxy @notStatic frontend-prod:3000
 }
 
 api.coai-lab.org {
-	reverse_proxy llmanipulate-backend-prod:8000
+	reverse_proxy backend-prod:8000
     @websockets {
         header Connection *Upgrade*
         header Upgrade websocket
     }
-    reverse_proxy @websockets llmanipulate-backend-prod:8000
+    reverse_proxy @websockets backend-prod:8000
 }
 
 dev.coai-lab.org {
-    reverse_proxy llmanipulate-frontend-dev:3000
+    reverse_proxy frontend-dev:3000
 }
 
 api.dev.coai-lab.org {
-	reverse_proxy llmanipulate-backend-dev:8000
+	reverse_proxy backend-dev:8000
     @websockets {
         header Connection *Upgrade*
         header Upgrade websocket
     }
-    reverse_proxy @websockets llmanipulate-backend-dev:8000
+    reverse_proxy @websockets backend-dev:8000
 }
 
 sandpit.coai-lab.org {
@@ -36,14 +36,14 @@ sandpit.coai-lab.org {
     @notStatic {
         not file {path}
     }
-    reverse_proxy @notStatic llmanipulate-frontend-sandpit:3000
+    reverse_proxy @notStatic frontend-sandpit:3000
 }
 
 api.sandpit.coai-lab.org {
-	reverse_proxy llmanipulate-backend-sandpit:8000
+	reverse_proxy backend-sandpit:8000
     @websockets {
         header Connection *Upgrade*
         header Upgrade websocket
     }
-    reverse_proxy @websockets llmanipulate-backend-sandpit:8000
+    reverse_proxy @websockets backend-sandpit:8000
 }
