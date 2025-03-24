@@ -1,26 +1,50 @@
 services:
-  backend:
-    container_name: llmanipulate-backend
-    restart: unless-stopped
-    build:
-      context: llmanipulate-backend
-    env_file: backend.env
+  
+  # backend-prod:
+  #   container_name: backend-prod
+  #   restart: unless-stopped
+  #   build: backend-prod
+  #   env_file: .env.backend.prod
 
-  frontend:
-    container_name: llmanipulate-frontend
-    restart: unless-stopped
-    build:
-      context: llmanipulate-frontend
+  # frontend-prod:
+  #   container_name: frontend-prod
+  #   restart: unless-stopped
+  #   build: frontend-prod
+  #   env_file: .env.frontend.prod
+    
+  # backend-dev:
+  #   container_name: backend-dev
+  #   restart: unless-stopped
+  #   build: backend-dev
+  #   env_file: .env.backend.dev
 
-  database: # https://hub.docker.com/_/postgres
-    container_name: llmanipulate-db
+  # frontend-dev:
+  #   container_name: frontend-dev
+  #   restart: unless-stopped
+  #   build: frontend-dev
+  #   env_file: .env.frontend.dev
+
+  backend-sandpit:
+    container_name: backend-sandpit
+    restart: unless-stopped
+    build: backend-sandpit
+    env_file: .env.backend.sandpit
+
+  frontend-sandpit:
+    container_name: frontend-sandpit
+    restart: unless-stopped
+    build: frontend-sandpit
+    env_file: .env.frontend.sandpit
+    
+  db: # https://hub.docker.com/_/postgres
+    container_name: db
     image: postgres:alpine
     restart: always
     shm_size: 128mb
-    env_file: backend.env
+    env_file: .env.db
 
   server:
-    container_name: llmanipulate-server
+    container_name: server
     image: caddy:alpine
     restart: unless-stopped
     cap_add:
