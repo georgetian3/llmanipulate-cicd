@@ -12,29 +12,29 @@ services:
   #   build: frontend-prod
   #   env_file: .env.frontend.prod
     
-  # backend-dev:
-  #   container_name: backend-dev
-  #   restart: unless-stopped
-  #   build: backend-dev
-  #   env_file: .env.backend.dev
-
-  # frontend-dev:
-  #   container_name: frontend-dev
-  #   restart: unless-stopped
-  #   build: frontend-dev
-  #   env_file: .env.frontend.dev
-
-  backend-sandpit:
-    container_name: backend-sandpit
+  backend-dev:
+    container_name: backend-dev
     restart: unless-stopped
-    build: backend-sandpit
-    env_file: .env.backend.sandpit
+    build: backend-dev
+    env_file: .env.backend.dev
 
-  frontend-sandpit:
-    container_name: frontend-sandpit
+  frontend-dev:
+    container_name: frontend-dev
     restart: unless-stopped
-    build: frontend-sandpit
-    env_file: .env.frontend.sandpit
+    build: frontend-dev
+    env_file: .env.frontend.dev
+
+  # backend-sandpit:
+  #   container_name: backend-sandpit
+  #   restart: unless-stopped
+  #   build: backend-sandpit
+  #   env_file: .env.backend.sandpit
+
+  # frontend-sandpit:
+  #   container_name: frontend-sandpit
+  #   restart: unless-stopped
+  #   build: frontend-sandpit
+  #   env_file: .env.frontend.sandpit
     
   db: # https://hub.docker.com/_/postgres
     container_name: db
