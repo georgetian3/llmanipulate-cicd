@@ -14,13 +14,11 @@ services:
 
   backend-dev:
     container_name: backend-dev
-    restart: unless-stopped
     build: backend-dev
     env_file: .env.backend.dev
 
   frontend-dev:
     container_name: frontend-dev
-    restart: unless-stopped
     build: frontend-dev
     env_file: .env.frontend.dev
 
