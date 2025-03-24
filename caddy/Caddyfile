@@ -18,13 +18,7 @@ api.coai-lab.org {
 }
 
 dev.coai-lab.org {
-    root * /srv
-    rewrite /guidelines /guidelines.pdf
-    file_server
-    @notStatic {
-        not file {path}
-    }
-    reverse_proxy @notStatic llmanipulate-frontend-dev:3000
+    reverse_proxy llmanipulate-frontend-dev:3000
 }
 
 api.dev.coai-lab.org {
@@ -38,7 +32,6 @@ api.dev.coai-lab.org {
 
 sandpit.coai-lab.org {
     root * /srv
-    rewrite /guidelines /guidelines.pdf
     file_server
     @notStatic {
         not file {path}
