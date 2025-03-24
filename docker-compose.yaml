@@ -1,5 +1,5 @@
 services:
-  
+
   # backend-prod:
   #   container_name: backend-prod
   #   restart: unless-stopped
@@ -11,7 +11,7 @@ services:
   #   restart: unless-stopped
   #   build: frontend-prod
   #   env_file: .env.frontend.prod
-    
+
   backend-dev:
     container_name: backend-dev
     restart: unless-stopped
@@ -35,8 +35,9 @@ services:
   #   restart: unless-stopped
   #   build: frontend-sandpit
   #   env_file: .env.frontend.sandpit
-    
-  db: # https://hub.docker.com/_/postgres
+
+  db:
+    # https://hub.docker.com/_/postgres
     container_name: db
     image: postgres:alpine
     restart: always
@@ -57,4 +58,3 @@ services:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./caddy/caddy_data:/data
       - ./caddy/caddy_config:/config
-      - ./guidelines.pdf:/srv/guidelines.pdf

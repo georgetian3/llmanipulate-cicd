@@ -1,5 +1,7 @@
 #/bin/bash
 
+git pull
+
 docker_not_installed() {
     if command -v docker compose >/dev/null 2>&1; then
         return 1 # installed
