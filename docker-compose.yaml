@@ -20,7 +20,7 @@ services:
   frontend-dev:
     container_name: frontend-dev
     build: frontend-dev
-    env_file: .env.frontend.dev
+    # env_file: .env.frontend.dev
 
   # backend-sandpit:
   #   container_name: backend-sandpit
