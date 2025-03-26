@@ -52,5 +52,5 @@ for component in "${components[@]}"; do
     done
 done
 
-# sudo docker compose up --build -d
+sudo docker compose up --build -d
 sudo docker restart server
